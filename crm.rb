@@ -41,7 +41,6 @@ class CRM
 
 
   def add_new_contact #instance methods
-    while true
       print "First name "
       first_name = gets.chomp
       print "Last name "
@@ -52,22 +51,61 @@ class CRM
       note = gets.chomp
       contact = Contact.new(first_name, last_name, email, note)
       @rolodex.add_contact(contact)
-    end
+      puts "Contact added!"
+      main_menu
   end
 
   def modify_contact
+    puts "Enter the ID of the contact you would like to modify"
+    contact_id = gets.chomp.to_i
+    contact = @rolodex.find(contact_id)
+    puts "Did you enter #{contact_id}? Type 'yes' to confirm. Type 'no' to re-type."
+    user_input = gets.chomp
+    
+    if user_input == "yes"
+        yes_modify(contact)
+    end
+    
+    if user_input == "no"
+       main_menu
+    end
+  end
+
+  def yes_modify(contact)
+        puts "[1] First name"
+        puts "[2] Last name"
+        puts "[3] Email"
+        puts "[4] Notes"
+        puts "Enter the number of the information you would like to modify"
+        
+        mod_selection_num = gets.chomp.to_i
+
+        puts "What's the new value?"
+
+        new_value = gets.chomp
+
+        contact.first_name = new_value if mod_selection_num == 1 
+        contact.last_name = new_value if mod_selection_num == 2
+        contact.email = new_value if mod_selection_num == 3
+        contact.note = new_value if mod_selection_num == 4
+
+        puts contact.to_s
+        main_menu
+
   end
 
   def delete_contact
   end
 
   def display_contact
-    while true
+    
       print "Enter ID of user you would like to view"
       contact_id = gets.chomp.to_i
       contact = @rolodex.find(contact_id)
-    end
+    
   end
+
+
 
   def	display_by_attribute
   end
