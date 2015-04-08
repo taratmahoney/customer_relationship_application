@@ -28,7 +28,7 @@ class CRM
     add_new_contact if selection == 1
     modify_contact if selection == 2
     delete_contact if selection == 3
-    display_contact if selection == 4
+    display_all_contacts if selection == 4
     display_by_attribute if selection == 5
     exit if selection == 6
   end 
@@ -61,7 +61,6 @@ class CRM
     contact = @rolodex.find(contact_id)
     puts "Did you enter #{contact_id}? Type 'yes' to confirm. Type 'no' to re-type."
     user_input = gets.chomp
-    
     if user_input == "yes"
         yes_modify(contact)
     end
@@ -91,21 +90,15 @@ class CRM
 
         puts contact.to_s
         main_menu
-
   end
 
   def delete_contact
   end
 
-  def display_contact
-    
-      print "Enter ID of user you would like to view"
-      contact_id = gets.chomp.to_i
-      contact = @rolodex.find(contact_id)
-    
+  def display_all_contacts
+    @rolodex.display_all
+    main_menu
   end
-
-
 
   def	display_by_attribute
   end

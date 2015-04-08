@@ -1,10 +1,15 @@
 require_relative 'contact'
 
 class Rolodex
+  attr_reader :contacts
 
   def initialize #creates empty array for contacts to go in
     @contacts = []
     @next_contact_id = 1
+  end
+
+  def contacts
+    @contacts
   end
 
   def add_contact(contact)
@@ -21,6 +26,14 @@ class Rolodex
 			to_s
 		end
 	end
+
+  def display_all
+    @contacts.each do |contact|
+      puts "Here are all your contacts:"
+      puts "#{contact.id.contact.to_s} /n"
+    end
+    return nil
+  end
 end
 
 # class Rolodex

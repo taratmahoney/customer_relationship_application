@@ -8,7 +8,6 @@
 # 
 
 # To do
-As a user, if 'no' is entered, I am returned back to the main menu.
 As a user, if 'display all' is selected, I am shown all of the contacts that exist with their 'id's.
 As a user, if 'display contact' is selected, I am prompted to enter an 'id' and then shown the corresponding contact.
 As a user, if 'display attribute' is selected, I am prompted to enter an attribute ('firstname', 'lastname', 'email', or 'notes') so that I can see all of the contacts according to that attribute.
@@ -30,6 +29,7 @@ As a user, if 'modify' is selected, I am prompted to enter an id for the contact
 As a user, when an id is entered, I am prompted to type 'yes' or 'no' to confirm my selection.
 As a user, if 'yes' is typed, I am prompted to change 'firstname', 'lastname', 'email' or 'notes' by number. You shouldn't be able to change the 'id'.
 As a user, when an attribute is entered, I am prompted to enter a new value for the attribute.
+As a user, if 'no' is entered, I am returned back to the main menu.
 
 
 
